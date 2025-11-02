@@ -136,9 +136,9 @@ a:hover {
 }
 
 .responsive-img {
-    max-width: 10%; /* La imagen no superará el ancho de su contenedor */
-    height: auto;    /* La altura se ajusta automáticamente para mantener la proporción */
-    display: block;  /* NUEVO: Elimina el espacio extra que a veces dejan las imágenes en línea */
+    max-width: 10%;
+    height: auto;
+    display: block;
     border-radius: 8px;
     margin-bottom: 15px;
     opacity: 0.9;
