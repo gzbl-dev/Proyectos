@@ -1,0 +1,212 @@
+/*
+ * ESTILOS PARA FORMULARIOS (form-style.css)
+*/
+
+:root {
+    --color-background: #1D1D1F;
+    --color-surface-1: #2C2C2E;
+    --color-surface-2: #1D1D1F;
+    --color-text-primary: #F5F5F7;
+    --color-text-secondary: #86868B;
+    --color-accent: #2997FF;
+    --color-border: #444;
+}
+
+/* * Contenedor de la página de formulario
+*/
+.form-page-container .main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+/* * La caja del formulario
+*/
+.form-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--color-surface-2);
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.form-container h2 {
+    text-align: center;
+    color: var(--color-text-primary);
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+/* * Grupos de formulario (label + input)
+*/
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--color-text-primary);
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+/* * Estilos de Inputs
+*/
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    color: var(--color-text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* * Placeholder
+*/
+.form-group input::placeholder {
+    color: var(--color-text-secondary);
+    opacity: 0.7;
+}
+
+/* * Foco del Input
+*/
+.form-group input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(41, 151, 255, 0.3);
+}
+
+
+/* * --- INICIO SECCIÓN CORREGIDA (CON !important Y SIN REGLAS DE DATE) ---
+ * Input con icono (Email, Contraseña, etc.)
+*/
+.input-with-icon {
+    position: relative;
+}
+
+/* * 1. REGLA GENERAL PARA *TODOS* LOS ICONOS DENTRO DE UN INPUT
+ * - Resetea el margen y el line-height
+*/
+.form-container .input-with-icon i.fa-solid {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-secondary);
+    margin-right: 0;
+    line-height: 1 !important;  /* <--- FORZAR EL CENTRADO VERTICAL */
+}
+
+/* * 2. ICONOS DE LA IZQUIERDA (Usuario, Email, etc.)
+*/
+.input-with-icon i.fa-solid:not(#togglePassword):not(#togglePassword1):not(#togglePassword2) {
+    left: 15px;
+}
+
+/* * 3. ICONOS DE LA DERECHA (Los "ojos")
+*/
+.input-with-icon i#togglePassword,
+.input-with-icon i#togglePassword1,
+.input-with-icon i#togglePassword2 {
+    right: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.input-with-icon i#togglePassword:hover,
+.input-with-icon i#togglePassword1:hover,
+.input-with-icon i#togglePassword2:hover {
+    color: var(--color-accent);
+}
+
+/* * 4. PADDING (ESPACIADO) DE LOS INPUTS
+*/
+
+/* Todos los inputs con icono tendrán padding izquierdo */
+.input-with-icon input {
+    padding-left: 45px;
+}
+
+/* Los inputs de contraseña también tendrán padding derecho para el "ojo" */
+.input-with-icon input[type="password"] {
+    padding-right: 45px;
+}
+
+/* El input de fecha se comporta como los demás */
+.input-with-icon input[type="date"] {
+    padding-left: 45px; /* <--- CORREGIDO */
+}
+
+/* * --- FIN SECCIÓN CORREGIDA ---
+*/
+
+
+/* * Botón de Submit
+*/
+.btn-submit {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--color-accent);
+    color: var(--color-text-primary);
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+}
+
+.btn-submit:hover {
+    background-color: #0077E0; /* Azul más oscuro */
+}
+
+/* * Enlace para cambiar entre Login/Registro
+*/
+.form-link {
+    text-align: center;
+    margin-top: 1.5rem;
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.form-link a {
+    color: var(--color-accent);
+    text-decoration: none;
+    font-weight: 700;
+}
+.form-link a:hover {
+    text-decoration: underline;
+}
+
+/* * Checkbox de LOPD
+*/
+.form-group-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 1.25rem;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    margin-top: 4px;
+}
+
+.form-group-checkbox label {
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.form-group-checkbox label a {
+    color: var(--color-accent);
+}

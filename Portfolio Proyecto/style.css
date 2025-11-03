@@ -1,0 +1,23 @@
+/* Hoja de estilos personalizados.
+  Puedes añadir aquí cualquier CSS que no quieras gestionar con Tailwind.
+*/
+
+.card {
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  /* Nota: Tailwind ya aplica bordes y sombras, así que este CSS 
+    es principalmente para el efecto hover personalizado.
+  */
+}
+
+/* efecto de hover */
+.card:hover {
+  /* box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); */ /* Tailwind usa 'shadow-lg' o 'shadow-xl' */
+  transform: translateY(-3px);
+  /* levanta la tarjeta un poco */
+
+  /* Puedes usar clases de Tailwind para esto en el HTML si prefieres:
+     <div class="card ... transition-all duration-200 ease-in-out hover:shadow-lg hover:-translate-y-1">
+  */
+}
