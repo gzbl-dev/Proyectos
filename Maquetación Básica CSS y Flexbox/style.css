@@ -250,7 +250,7 @@ a i.fa-solid, a i.fa-brands {
     border: 1px solid var(--color-accent);
 }
 
-.btn-read-more:hover {
+.btn-read-more:hover{
     background-color: #0077E0;
     text-decoration: none;
     color: white;
