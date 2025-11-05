@@ -37,6 +37,6 @@ loginForm.addEventListener('submit', async (e) => {
     } catch (error) {
         // Manejamos errores
         console.error("Error al iniciar sesión:", error.message);
-        alert("Error: " + error.message);
+        alert("Error al iniciar sesión");
     }
 });

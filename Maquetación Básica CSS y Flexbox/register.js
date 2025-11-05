@@ -23,7 +23,7 @@ registerForm.addEventListener('submit', async (e) => {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
 
-        console.log("Usuario registrado en Auth:", user.uid);
+        console.log("Usuario registrado:", user.uid);
 
         // 5. Guardamos los datos extra en Firestore
         // Usamos el UID (ID Único) del usuario como ID del documento
@@ -35,13 +35,13 @@ registerForm.addEventListener('submit', async (e) => {
             fechaRegistro: new Date() // Guardamos también la fecha de registro
         });
 
-        alert('¡Usuario registrado con éxito! Serás redirigido al login.');
+        alert('¡Usuario registrado con éxito! Inicia sesión.');
         // 6. Redirigimos al login
         window.location.href = 'login.html';
 
     } catch (error) {
         // Manejamos errores
         console.error("Error al registrar:", error.message);
-        alert("Error al registrar: " + error.message);
+        alert("Error al registrar");
     }
 });
