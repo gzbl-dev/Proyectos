@@ -76,20 +76,23 @@
         </div>
     </footer>
 
+    <script type="module" src="firebase-config.js"></script>
+    
+    <script type="module" src="login.js"></script>
+
     <script>
         const togglePassword = document.getElementById('togglePassword');
         const password = document.getElementById('password');
 
         togglePassword.addEventListener('click', function (e) {
-            // Cambia el tipo de input
             const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
             password.setAttribute('type', type);
-            
-            // Cambia el icono
             this.classList.toggle('fa-eye');
             this.classList.toggle('fa-eye-slash');
         });
     </script>
-
+    
+</body>
+</html>
 </body>
 </html>

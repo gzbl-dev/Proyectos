@@ -115,8 +115,11 @@
         </div>
     </footer>
 
+    <script type="module" src="firebase-config.js"></script>
+    
+    <script type="module" src="register.js"></script>
+
     <script>
-        // Función reutilizable para los botones de mostrar/ocultar
         function setupPasswordToggle(toggleId, passwordId) {
             const toggle = document.getElementById(toggleId);
             const password = document.getElementById(passwordId);
@@ -128,12 +131,9 @@
                 this.classList.toggle('fa-eye-slash');
             });
         }
-
-        // Configurar ambos botones
         setupPasswordToggle('togglePassword1', 'password');
         setupPasswordToggle('togglePassword2', 'confirm-password');
 
-        // Función para validar que las contraseñas coinciden (usada en el oninput)
         function checkPasswordMatch(confirmInput) {
             const password = document.getElementById('password');
             if (confirmInput.value !== password.value) {
@@ -143,6 +143,9 @@
             }
         }
     </script>
+    
+</body>
+</html>
 
 </body>
 </html>
