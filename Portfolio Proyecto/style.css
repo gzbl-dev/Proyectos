@@ -18,6 +18,59 @@
   /* levanta la tarjeta un poco */
 
   /* Puedes usar clases de Tailwind para esto en el HTML si prefieres:
-     <div class="card ... transition-all duration-200 ease-in-out hover:shadow-lg hover:-translate-y-1">
+      <div class="card ... transition-all duration-200 ease-in-out hover:shadow-lg hover:-translate-y-1">
   */
+}
+
+/* NUEVAS CLASES AÑADIDAS 
+  ============================================
+*/
+
+/* Anclaje para la navegación (sticky nav) */
+.section-anchor {
+  scroll-margin-top: 100px;
+}
+
+
+/* Imagen de perfil */
+.hero-avatar {
+  background-image: url("assets/img/CV\ FOTO\ MEJORADA\ GRANDE\ BEIGE.png");
+  background-size: 140%; /* <-- AÑADE ESTA LÍNEA */
+}
+
+/* Logos de Experiencia */
+.logo-blc {
+  background-image: url("./src/images/logo Blue Light Consulting.png");
+}
+.logo-aertec {
+  background-image: url("./src/images/logo AERTEC.png");
+}
+.logo-plannifai {
+  background-image: url("./src/images/logo plannifai.png");
+}
+
+/* Imágenes de Proyectos */
+.project-img-cv {
+  background-image: url("./src/images/cv vista previa.PNG");
+}
+.project-img-fullstack {
+  background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAfeeoWxgKUfKikL9rNja3tQnz-b3VwDSrJCGsCOFtyZSbZQrkYVXk7hAaS-acbTk6OU1PeGRujYkgFXYRp-Lnw-deuhVt_gsFwa52jdtkrbXDcwiIWuGjlQTtbBqs_U9D-ksnfo52Le3qSk7Q0yAwtpCMZSyiCyA55BfWFjQEYVvbZofAlT6a5bR-5tUrAC5m80-W7KE77o-NVGOvlXRbhrsyb0BYjC0CDltsuxeiLQKz08IiNS4xAauAvn8Cc1sFWeDTibStR0g4");
+}
+
+/* Por defecto (modo claro): 
+   Oculta el sol y muestra la luna */
+#theme-toggle-sun {
+  display: none;
+}
+#theme-toggle-moon {
+  display: block;
+}
+
+/* Cuando la clase .dark está en <html>:
+   Muestra el sol y oculta la luna */
+.dark #theme-toggle-sun {
+  display: block;
+}
+.dark #theme-toggle-moon {
+  display: none;
 }

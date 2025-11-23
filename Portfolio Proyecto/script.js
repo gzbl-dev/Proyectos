@@ -14,7 +14,7 @@ function openPrintPage() {
       printWindow.focus(); // Enfoca la nueva ventana
       printWindow.print(); // Abre el diálogo de impresión
       
-      // Cierra la ventana después de imprimir (esto puede no funcionar en todos los navegadores)
+      // Cierra la ventana después de imprimir (esto puede no funcionar en todos los browsers)
       printWindow.onafterprint = function () {
         printWindow.close();
       };
@@ -25,8 +25,35 @@ function openPrintPage() {
   }
 }
 
-// Puedes añadir más funciones aquí
-// Ejemplo:
-// function toggleDarkMode() {
-//   document.documentElement.classList.toggle('dark');
-// }
+
+// ===================================
+// === LÓGICA DE MODO OSCURO (NUEVA) ===
+// ===================================
+
+// Esta función se ejecuta inmediatamente al cargar la página
+// para establecer el tema correcto y evitar parpadeos (flickering).
+(function() {
+  const storedTheme = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  // Aplica 'dark' si está en localStorage O si el sistema lo prefiere
+  if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+    document.documentElement.classList.add('dark');
+  } else {
+    document.documentElement.classList.remove('dark');
+  }
+})();
+
+
+// Esta es la función que llama tu botón HTML
+function toggleDarkMode() {
+  // Alterna la clase 'dark' en el elemento <html>
+  const isDark = document.documentElement.classList.toggle('dark');
+  
+  // Guarda la preferencia del usuario en localStorage
+  if (isDark) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+}
