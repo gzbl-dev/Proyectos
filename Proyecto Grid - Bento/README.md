@@ -36,10 +36,12 @@ El sistema de grid funciona mediante una jerarquía de tres niveles:
   │     ├── styles.css      # Lógica del Grid y estilos
   │     └── variables.css   # Paleta de colores y temas
   └── index.html
+```
 
 ## 🎨 Fragmento de Código
 Implementación del Dark Mode mediante variables CSS:
 
+```text
 :root {
   /* Tema Claro por defecto */
   --color-page-bg: #f5f5f7;
@@ -55,4 +57,5 @@ Implementación del Dark Mode mediante variables CSS:
     --color-text-primary: #f5f5f7;
   }
 }
+```
 
