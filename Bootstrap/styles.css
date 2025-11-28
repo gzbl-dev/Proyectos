@@ -27,3 +27,16 @@ footer {
 .btn {
     transition: all 0.3s ease;
 }
+
+
+.social-link-hover {
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: block;
+}
+
+
+.social-link-hover:hover {
+    color: #00bceb !important;
+    transform: translateY(-5px); 
+    cursor: pointer;
+}
