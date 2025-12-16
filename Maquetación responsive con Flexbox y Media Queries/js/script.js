@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const card = this.closest('.card');
                 
+                // Se inserta como el 1º del contenedor
                 galleryContainer.prepend(card);
                 
                 card.animate([
