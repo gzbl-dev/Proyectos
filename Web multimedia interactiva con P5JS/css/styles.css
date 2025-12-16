@@ -11,6 +11,7 @@ footer {
     padding: 20px;
 }
 
+/* Lo empujamos al fondo de la pila visual*/
 #canvas-container {
     position: fixed;
     top: 0;
