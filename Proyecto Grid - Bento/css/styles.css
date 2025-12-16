@@ -67,6 +67,7 @@ h1 {
     color: var(--color-text-primary);
   }
   
+  /* Nesting nativo. Referencia al padre en variaciones */
   /* Clase para items de imagen */
   &.image-fill {
     padding: 0;
