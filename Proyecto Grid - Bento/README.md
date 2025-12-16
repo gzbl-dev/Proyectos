@@ -4,7 +4,14 @@ Este proyecto es una recreación del popular diseño estilo **"Bento Grid"**, ut
 
 El objetivo principal es demostrar el dominio de **CSS Grid avanzado**, utilizando grids anidados, variables CSS y diseño responsivo adaptativo.
 
-## 🚀 Características Principales
+## 🚀 Demo en Vivo
+
+Puedes visualizar el proyecto funcionando aquí:
+### [🔗 VER PROYECTO (GitHub Pages)](https://gzbl-dev.github.io/Proyectos/Proyecto%20Grid%20-%20Bento/)
+
+---
+
+## 📝 Características Principales
 
 - **Diseño 100% Responsivo:**
   - 📱 **Móvil:** Layout de una sola columna fluida.
