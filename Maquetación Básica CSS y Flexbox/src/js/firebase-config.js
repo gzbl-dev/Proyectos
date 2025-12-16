@@ -1,4 +1,4 @@
-// Importa las funciones que necesitas de los SDKs
+
 // NOTA: Estas URL son para la versión 9 (modular) de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getAuth } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js";

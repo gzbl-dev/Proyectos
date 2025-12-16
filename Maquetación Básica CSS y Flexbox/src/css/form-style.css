@@ -87,7 +87,7 @@
 }
 
 
-/* * --- INICIO SECCIÓN CORREGIDA (CON !important Y SIN REGLAS DE DATE) ---
+/* * --- INICIO SECCIÓN (CON !important Y SIN REGLAS DE DATE) ---
  * Input con icono (Email, Contraseña, etc.)
 */
 .input-with-icon {
@@ -143,12 +143,8 @@
 
 /* El input de fecha se comporta como los demás */
 .input-with-icon input[type="date"] {
-    padding-left: 45px; /* <--- CORREGIDO */
+    padding-left: 45px;
 }
-
-/* * --- FIN SECCIÓN CORREGIDA ---
-*/
-
 
 /* * Botón de Submit
 */

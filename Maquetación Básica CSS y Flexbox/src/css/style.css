@@ -1,3 +1,4 @@
+/*Paleta de colores oscuros*/
 :root {
     --color-background: #1D1D1F;
     --color-surface-1: #2C2C2E;
@@ -8,6 +9,9 @@
     --color-border: #444;
 }
 
+
+/* Cambia el modelo de caja estándar de CSS
+   Evita que se rompa la maquetación al añadir espacios internos */
 * {
     box-sizing: border-box;
 }
@@ -22,8 +26,10 @@ html, body {
     height: 100%; 
 }
 
+
+/* El body se convierte en un contenedor flexible, esto permite tener un sticky footer*/
 body {
-    display: flex;
+    display: flex; 
     flex-direction: column;
     min-height: 100vh;
     align-items: center;
@@ -32,16 +38,16 @@ body {
     position: relative; 
 }
 
-/* 2. Contenedor para los botones */
+/* Contenedor para los botones */
 .auth-buttons {
-    position: absolute;  /* Posicionamiento absoluto */
-    top: 20px;           /* Alineado con el padding del header */
-    right: 20px;         /* Pegado a la derecha */
-    display: flex;       /* Para alinear los botones entre sí */
-    gap: 10px;           /* Espacio entre botones */
+    position: absolute;  
+    top: 20px;           
+    right: 20px;         
+    display: flex;       
+    gap: 10px;           
 }
 
-/* 3. Estilo de los botones */
+/* Estilo botones */
 .btn-auth {
     display: inline-block;
     padding: 8px 14px;
@@ -51,17 +57,17 @@ body {
     border-radius: 6px;
     transition: all 0.3s ease;
     border: 1px solid var(--color-border);
-    color: var(--color-text-secondary); /* Color de texto sutil */
+    color: var(--color-text-secondary);
 }
 
-/* 4. Estilo de botón principal (Registro) */
+/* Estilo de botón principal */
 .btn-auth.btn-register {
     background-color: var(--color-accent);
     border-color: var(--color-accent);
     color: var(--color-text-primary);
 }
 
-/* 5. Efectos Hover */
+/* Efectos Hover */
 .btn-auth:hover {
     color: var(--color-text-primary);
     border-color: var(--color-accent);
@@ -73,6 +79,11 @@ body {
     background-color: #0077E0; /* Un azul más oscuro */
     border-color: #0077E0;
 }
+
+
+/* Gracias al flex permite colocar el <main> y el <aside> al lado */
+/* flex: 1 para que ocupe todo el espacio sobrante */
+/* Ponemos un max y un min para evitar que el contenido se expanda de más*/
 .main-container {
     display: flex;
     flex-direction: row;
@@ -142,7 +153,7 @@ body {
     border: 1px solid var(--color-border);
     transition: all 0.3s ease;
 }
-
+/* Sensación táctil de elevación */
 .main-nav a:hover {
     background-color: var(--color-accent);
     color: var(--color-text-primary);
@@ -180,7 +191,7 @@ a:hover {
 }
 
 .responsive-img {
-    max-width: 300px; /* <--- AHORA ESTÁ EN 300px */
+    max-width: 300px;
     height: auto;
     display: block;
     border-radius: 8px;

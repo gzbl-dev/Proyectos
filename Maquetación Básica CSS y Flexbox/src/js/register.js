@@ -16,7 +16,7 @@ registerForm.addEventListener('submit', async (e) => {
     const direccion = registerForm.address.value;
     const fechaNacimiento = registerForm.birthdate.value;
     const password = registerForm.password.value;
-    // El 'confirm-password' ya lo validas con tu JS, ¡perfecto!
+    
 
     try {
         // 4. Creamos el usuario en Firebase Authentication
