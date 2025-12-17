@@ -275,9 +275,16 @@ a i.fa-solid, a i.fa-brands {
 @media (max-width: 768px) {
     .main-container {
         flex-direction: column;
+        min-width: 100%; /* Forzamos a que se adapte al ancho del móvil */
+        width: 100%;     /* Aseguramos que use todo el ancho disponible */
     }
 
     .sidebar {
         flex-basis: auto;
+    }
+
+    .site-header, .site-footer {
+        min-width: 100%;
+        width: 100%;
     }
 }
