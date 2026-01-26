@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Quita las barras de scroll */
+    background-color: #202020; /* Color de fondo por si tarda en cargar */
+}
+canvas {
+    display: block;
+}
+
+/* Contenedor de los botones */
+#animations-panel {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 100;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+}
+
+/* Estilo de cada botón */
+.anim-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: capitalize; /* Pone mayúsculas bonitas */
+    backdrop-filter: blur(5px);
+}
+
+.anim-btn:hover {
+    background: white;
+    color: black;
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Botón activo (el que se está reproduciendo) */
+.anim-btn.active {
+    background: #00ff88; /* Verde neón o el color que prefieras */
+    color: black;
+    border-color: #00ff88;
+    font-weight: bold;
+}

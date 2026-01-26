@@ -1,55 +1,50 @@
-# 🌐 Web Multimedia Interactiva con P5.js
+# 3D Canvas - Integración Web con Three.js
 
-Este proyecto consiste en el desarrollo de una Landing Page ("FUTURE GBL JS") que integra elementos web convencionales (HTML5/CSS3) con un fondo multimedia interactivo generado mediante la librería **P5.js**.
+[![Ver Demo](https://img.shields.io/badge/Demo_Online-Ver_Proyecto-success?style=for-the-badge&logo=github)](https://gzbl-dev.github.io/Proyectos/3D%20Canvas)
 
-El objetivo principal es lograr una integración natural donde el canvas aporte espectacularidad visual sin entorpecer la legibilidad del contenido.
-
-## 🚀 Demo en Vivo
-
-Puedes visualizar el proyecto funcionando aquí:
-### [🔗 VER PROYECTO (GitHub Pages)](https://gzbl-dev.github.io/Proyectos/Web%20multimedia%20interactiva%20con%20P5JS/)
+Este proyecto es una práctica de integración de contenido 3D en una interfaz web utilizando la librería **Three.js**. El objetivo es mostrar un personaje 3D animado dentro de un entorno "visualmente interesante" con iluminación, sombras e interactividad.
 
 ---
+
+## 🚀 Características Principales
+
+* **Renderizado 3D en tiempo real:** Uso de WebGL a través de Three.js.
+
+* **Selector de Animaciones:** Interfaz de usuario (botones) que permite alternar instantáneamente entre tres estados
+
+* **Iluminación y Sombras:** Configuración de luces hemisféricas y direccionales con proyección de sombras en tiempo real sobre el suelo.
+
+* **Entorno Inmersivo:** Fondo degradado oscuro con efecto de niebla (Fog) para integrar el suelo infinito con el fondo de la web.
+
+* **Interactividad:** Control de cámara orbital (OrbitControls) para rotar y hacer zoom sobre el modelo.
 
 ## 🛠️ Tecnologías Utilizadas
 
-* **HTML5:** Estructura semántica (nav, header, section, footer).
-* **CSS3:** Diseño responsivo, Flexbox y efectos de *Glassmorphism* (`backdrop-filter`) para la integración visual sobre el canvas.
-* **JavaScript (P5.js):** Lógica de animación y renderizado del fondo interactivo.
+* **HTML5 / CSS3:** Estructura y estilos de la interfaz (botones translúcidos estilo "glassmorphism").
+* **JavaScript (ES6):** Lógica de control.
+* **Three.js:** Motor gráfico 3D (importado vía CDN).
+* **FBXLoader:** Cargador para modelos y animaciones en formato `.fbx`.
 
-## ✨ Características del Proyecto
+## ⚙️ Decisiones Técnicas y Soluciones
 
-1.  **Integración Web-Canvas:** El canvas de P5.js se ubica en un `z-index` negativo con posición fija, actuando como un fondo dinámico que cubre toda la ventana (`windowWidth`, `windowHeight`).
-2.  **Interfaz "Glass":** Los contenedores HTML (tarjetas y menús) utilizan fondos semitransparentes para dejar ver la animación inferior.
-3.  **Animación Generativa:** Sistema de partículas (nodos) que flotan libremente por el espacio.
-4.  **Interactividad:**
-    * Las partículas reaccionan a la posición del ratón (`mouseX`, `mouseY`).
-    * Se generan conexiones dinámicas (líneas) cuando el cursor se acerca a los nodos.
-    * La opacidad de las líneas varía según la distancia para suavizar el efecto.
+Durante el desarrollo se implementaron soluciones específicas para resolver problemas de compatibilidad con modelos generados por IA y Mixamo:
 
-## 📝 Créditos y Modificaciones
+1.  **Gestión de Animaciones (Swap Strategy):**
+    * Debido a incompatibilidades en la nomenclatura de huesos (huesos *mixamorig* vs *standard*) que impedían reproducir múltiples animaciones en un solo esqueleto ("T-Pose"), se optó por una estrategia de carga múltiple.
+    * Se cargan los 3 archivos `.fbx` (Baile, Rezar, Boxeo) al inicio.
+    * El sistema gestiona la visibilidad (`visible = true/false`) para alternar entre ellos. Esto garantiza que cada animación se reproduzca perfectamente con su propio esqueleto original.
 
-### Fuente Original
-El código base para el sistema de partículas está inspirado en los ejemplos de "Network/Particles" de **Daniel Shiffman (The Coding Train)** y la documentación oficial de **OpenProcessing.org**.
+2.  **Preservación de Texturas:**
+    * Para evitar problemas de renderizado donde el modelo aparecía negro por fallos en la iluminación de materiales complejos, se implementó una solución híbrida:
+        * **Material:** Se utiliza `MeshBasicMaterial` para garantizar que la textura y los colores originales del personaje se vean nítidos y sin artefactos.
+        * **Sombras:** A pesar de usar un material básico, se fuerza la proyección de sombras (`castShadow = true`) para mantener el realismo de la escena y la interacción con el suelo.
 
-### Modificaciones Realizadas (Aporte Propio)
-Para adaptar el código a los requisitos de la asignatura, se realizaron las siguientes modificaciones:
-* **Adaptación al DOM:** Se vinculó el canvas a un `div` contenedor específico (`#canvas-container`) en lugar de renderizarse al final del body.
-* **Estética Cyberpunk/Futurista:** Se ajustó la paleta de colores a tonos oscuros (Deep Blue) y Cian (`#00d2ff`) para coincidir con la identidad corporativa de la web HTML.
-* **Lógica de Interacción:** Se implementó una lógica de distancia (`dist()`) específica para que las conexiones solo ocurran con el ratón del usuario, creando un efecto de "linterna" o "foco de conexiones".
-* **Responsive:** Se añadió la función `windowResized()` para recalcular el tamaño del canvas dinámicamente si el usuario cambia el tamaño del navegador.
-
----
-
-## 📂 Estructura de Archivos
+## 📂 Estructura del Proyecto
 
 ```text
 /
-├── assets/
-│   └── favicon.svg     # Icono vectorizado
-├── css/
-│   └── styles.css      # Hoja de estilos
-├── js/
-│   └── sketch.js       # Lógica P5.js
-├── index.html          # Página principal
+├── assets/             # Archivos 3D (Baile.fbx, Praying.fbx, Boxing.fbx)
+├── index.html          # Estructura DOM y UI
+├── style.css           # Estilos visuales
+├── main.js             # Lógica Three.js (Escena, Luces, Controladores)
 └── README.md           # Documentación
