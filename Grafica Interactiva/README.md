@@ -2,7 +2,7 @@
 
 Una aplicación web interactiva que combina la potencia de **OpenStreetMap** (vía Leaflet) con los datos climáticos en tiempo real de **OpenWeatherMap**. 
 
-[![Ver Demo](https://img.shields.io/badge/DEMO-Ver_Web_en_Vivo-brightgreen?style=for-the-badge&logo=github)](https://gzbl-dev.github.io/proyectos/Grafica%20Interactiva)
+[![Ver Demo](https://img.shields.io/badge/DEMO-Ver_Web_en_Vivo-brightgreen?style=for-the-badge&logo=github)](https://gzbl-dev.github.io/Proyectos/Grafica%20Interactiva)
 
 ## ✨ Características
 * **Geolocalización Automática:** Detecta tu ubicación inicial mediante el navegador.
