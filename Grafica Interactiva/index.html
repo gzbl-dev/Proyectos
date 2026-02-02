@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoWeather Interactivo - Gonzalo Bernal  </title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header>
+            <h1>Visor Meteorológico</h1>
+            <p>Haz clic en el mapa para explorar el clima mundial</p>
+        </header>
+
+        <section id="map-section">
+            <div id="map"></div>
+        </section>
+
+        <section id="data-section">
+            <div id="current-weather" class="card">
+                <h2>Cargando ubicación...</h2>
+                </div>
+
+            <div class="chart-container card">
+                <canvas id="forecastChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
