@@ -32,7 +32,7 @@ canvas {
     font-family: 'Segoe UI', sans-serif;
     font-size: 0.9rem;
     transition: all 0.3s ease;
-    text-transform: capitalize; /* Pone mayúsculas bonitas */
+    text-transform: capitalize;
     backdrop-filter: blur(5px);
 }
 
@@ -45,7 +45,7 @@ canvas {
 
 /* Botón activo (el que se está reproduciendo) */
 .anim-btn.active {
-    background: #00ff88; /* Verde neón o el color que prefieras */
+    background: #00ff88; /* Verde neón */
     color: black;
     border-color: #00ff88;
     font-weight: bold;

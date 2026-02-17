@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { FBXLoader } from 'three/addons/loaders/FBXLoader.js';
 
-// --- CONFIGURACIÓN DE TUS 3 ANIMACIONES ---
+// --- CONFIGURACIÓN DE LAS 3 ANIMACIONES ---
 const modelsConfig = [
     { name: "Baile Hip Hop", url: 'assets/baile.fbx' }, // Este saldrá primero
     { name: "Rezar", url: 'assets/Praying.fbx' },
@@ -56,7 +56,7 @@ const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
 controls.maxPolarAngle = Math.PI / 2;
 
-// 5. CARGAR MODELOS (ESTRATEGIA: CARGAR TODOS Y OCULTAR)
+// 5. CARGAR MODELOS
 const loader = new FBXLoader();
 const panel = document.getElementById('animations-panel'); 
 
@@ -73,7 +73,7 @@ modelsConfig.forEach((config, index) => {
         object.scale.set(100, 100, 100); 
         object.position.y = 0; // Pies en el suelo
 
-        // MANTENER TEXTURAS (TU CÓDIGO SEGURO)
+        // MANTENER TEXTURAS
         object.traverse((child) => {
             if (child.isMesh) {
                 child.castShadow = true; 
